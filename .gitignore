@@ -1,0 +1,3 @@
+*.pyc
+smugglers/static
+shop/local_settings.py
