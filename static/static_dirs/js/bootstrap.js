@@ -738,7 +738,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     }
 
     var desc = ' li:not(.divider):visible a'
-    var $items = $parent.find('[role="menu"]' + desc + ', [role="listbox"]' + desc)
+    var $items = $parent.find('[role="main_menu"]' + desc + ', [role="listbox"]' + desc)
 
     if (!$items.length) return
 
@@ -813,7 +813,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     .on('click.bs.dropdown.data-api', clearMenus)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
-    .on('keydown.bs.dropdown.data-api', toggle + ', [role="menu"], [role="listbox"]', Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', toggle + ', [role="main_menu"], [role="listbox"]', Dropdown.prototype.keydown)
 
 }(jQuery);
 
@@ -1790,7 +1790,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       .parents('li')
       .addClass('active')
 
-    if (active.parent('.dropdown-menu').length) {
+    if (active.parent('.dropdown-main_menu').length) {
       active = active
         .closest('li.dropdown')
         .addClass('active')
@@ -1864,7 +1864,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
   Tab.prototype.show = function () {
     var $this    = this.element
-    var $ul      = $this.closest('ul:not(.dropdown-menu)')
+    var $ul      = $this.closest('ul:not(.dropdown-main_menu)')
     var selector = $this.data('target')
 
     if (!selector) {
@@ -1903,7 +1903,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     function next() {
       $active
         .removeClass('active')
-        .find('> .dropdown-menu > .active')
+        .find('> .dropdown-main_menu > .active')
         .removeClass('active')
 
       element.addClass('active')
@@ -1915,7 +1915,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
         element.removeClass('fade')
       }
 
-      if (element.parent('.dropdown-menu')) {
+      if (element.parent('.dropdown-main_menu')) {
         element.closest('li.dropdown').addClass('active')
       }
 

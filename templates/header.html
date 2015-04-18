@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+<header>
+        <div class="container">
+            <div class="intro-text">
+
+               <div class="col-md-4 socialtop wow bounceInLeft hidden-xs hidden-sm" data-wow-duration="1s" data-wow-delay="1s">
+
+                   <span>{{ social.title }}</span>
+                  <div class="social">
+                   <a href="{{ social.facebook }}"><img src="{% static 'img/gplus.png' %}" alt=""/></a>
+                   <a href="{{ social.twitter }}"><img src="{% static 'img/twitter.png' %}" alt=""/></a>
+                   <a href="{{ social.youtube }}"><img src="{% static 'img/youtube.png' %}" alt=""/></a>
+                   </div>
+
+               </div>
+
+            <div class="col-md-4 mobilesocial wow bounceInLeft hidden-md hidden-lg" data-wow-duration="1s" data-wow-delay="1s"">
+                   <a href="{{ social.facebook }}"><img src="{% static 'img/gplus.png' %}" alt=""/></a>
+                   <a href="{{ social.twitter }}"><img src="{% static 'img/twitter.png' %}" alt=""/></a>
+                   <a href="{{ social.youtube }}"><img src="{% static 'img/youtube.png' %}" alt=""/></a>
+            </div>
+
+               <div class="logo col-md-4 center-block  wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.8s">
+                <img class="img-responsive center-block" src="{% static 'img/logo.png' %}" alt="">
+                </div>
+                <div class="col-md-4 newsontop wow bounceInRight" data-wow-duration="1s" data-wow-delay="1s">
+
+                <span>{{ last.title }}</span>
+
+                <div class="newsborder">
+         {% for item in feed %}
+                <div class="last_news">
+                        <h3 class="newsfeedt"><a href="{% url "entry_detail" slug=item.slug %}">{{ item.title }}</a></h3>
+                    <a href="{% url "entry_detail" slug=item.slug %}"><img class="img-responsive feedimg" src="{{MEDIA_URL}}{{item.pics}}" alt="MyObject's Image"/></a>
+                   <p>{{ item.small_body }}</p>
+                </div>
+                {% endfor %}
+                </div>
+                 <a class = "seeall" style="float: left;" href="/news/">See all...</a>
+</div>
+            </div>
+        </div>
+
+    </header>

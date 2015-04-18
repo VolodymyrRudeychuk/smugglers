@@ -8,13 +8,14 @@ class EntryQuerySet(models.QuerySet):
         return self.filter(publish=True)
 
 class Entry(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=20)
+    small_body = models.TextField(max_length=167, blank=True)
     body = MarkdownField()
     slug = models.SlugField(max_length=200, unique=True)
     publish = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-
+    pics = models.ImageField(blank=True)
     objects = EntryQuerySet.as_manager()
 
 

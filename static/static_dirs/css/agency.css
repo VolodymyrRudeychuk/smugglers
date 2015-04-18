@@ -202,8 +202,8 @@ fieldset[disabled] .btn-xl.active {
 }
 @media (min-width: 768px) {
   .navbar-default {
-    background-color: transparent;
-    padding: 25px 0;
+/*    background-color: transparent;*/
+    padding: 2px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
@@ -227,11 +227,12 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
+  margin-top: 50px;
   background-image: url('../img/header-bg.jpg');
   background-repeat: none;
   background-attachment: scroll;
   width: 100%;
-  height: 100%;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -829,6 +830,18 @@ body {
     margin-bottom: 1%;
     line-height: 20px;
   }
+.logo{
+    margin-bottom: 25px;
+}
+.mobilesocial {
+    margin-top: -20%;
+    margin-bottom: 5%;
+}
+
+.mobilesocial img {
+    width: 100px;
+}
+
 }
 /* От ландшафтного экрана телефона до потретного планшета */
 @media (max-width: 767px) {
@@ -846,21 +859,39 @@ body {
     margin-top: 7%;
     line-height: 20px;
   }
+.logo{
+    margin-bottom: 25px;
+}
+
+
 }
 /* От портретного планшета до ландшафтного экрана и настольных дисплеев */
 @media (min-width: 992px) {
   header {
-    padding: 5% 0 15% 0;
+    padding: 5% 0 0 0;
   }
+
+
+  .mobilesocial {
+    margin-top: -300%;
+    margin-bottom: 5%;
+}
+
+.mobilesocial img {
+    width: 100px;
+}
+
 }
 /* Большой дисплей */
 @media (min-width: 1200px) {
   header {
-    padding: 15% 0 15% 0;
+    padding: 15% 0 0 0;
   }
   .logo {
     margin-top: -10%;
   }
+
+
 }
 .menu {
   text-shadow: #3e3835 1px 0px, #3e3835 1px 1px, #3e3835 0px 1px, #3e3835 -1px 1px, #3e3835 -1px 0px, #3e3835 -1px -1px, #3e3835 0px -1px, #3e3835 1px -1px, #3e3835 0 0 3px, #3e3835 0 0 3px, #3e3835 0 0 3px, #3e3835 0 0 3px, #3e3835 0 0 3px, #3e3835 0 0 3px, #3e3835 0 0 3px, #3e3835 0 0 3px;
@@ -881,3 +912,107 @@ body {
     display: block;
     position: relative;
 }
+
+
+.margin {
+    margin-top: 5%;
+}
+
+
+.newsborder {
+    border-top: 1px solid #EA543E;
+}
+
+
+
+
+.newsontop .seeall{
+    color: #EA543E;
+    font-size: 16px;
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+}
+
+
+.newsontop .seeall:hover{
+    text-decoration: none;
+}
+
+
+.newsontop span {
+    position: relative;
+    color: #EA543E;
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+
+.last_news h3 {
+    position: relative;
+    text-align: left;
+    top: 10px;
+    font-size: 16px;
+    display: block;
+}
+
+
+.last_news img {
+    float: right;
+    margin-left: 10px;
+    border: 3px solid #F3EBA9;
+    width: 40%;
+    height: 90px;
+
+}
+
+
+.last_news p {
+    font-size: 10px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.social {
+    padding-top: 20px;
+    margin-top: 37%;
+    border-top: 1px solid #EA543E;
+}
+
+.socialtop span {
+
+    position: relative;
+    color: #EA543E;
+    bottom: 4px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.social img {
+    width: 120px;
+}
+
+
+.mobilesocial {
+    margin-top: -14%;
+    margin-bottom: 5%;
+}
+
+.mobilesocial img {
+    width: 120px;
+}
+
+
+
+#Beer {
+    background: url("../img/beersbg.jpg");
+    background-repeat: none;
+    background-attachment: scroll;
+
+    width: 100%;
+    color: #fff;
+
+}
+

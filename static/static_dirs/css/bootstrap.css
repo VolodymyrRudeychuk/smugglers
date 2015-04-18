@@ -2811,7 +2811,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
+  background-color: #3D3734;
   border-color: #357ebd;
 }
 .btn-primary:hover,
@@ -2975,7 +2975,7 @@ fieldset[disabled] .btn-warning.active {
 }
 .btn-danger {
   color: #fff;
-  background-color: #d9534f;
+  background-color: #EB553E;
   border-color: #d43f3a;
 }
 .btn-danger:hover,
@@ -5411,15 +5411,17 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 6px;
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+.modalbg {
+    background: url(../img/beer.jpg);
 }
 .modal-backdrop {
   position: fixed;
@@ -5441,7 +5443,7 @@ button.close {
 .modal-header {
   min-height: 16.42857143px;
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5449,6 +5451,7 @@ button.close {
 .modal-title {
   margin: 0;
   line-height: 1.42857143;
+    color: #3C3633;
 }
 .modal-body {
   position: relative;
@@ -5457,7 +5460,7 @@ button.close {
 .modal-footer {
   padding: 15px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;

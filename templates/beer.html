@@ -1,0 +1,68 @@
+{% load staticfiles %}
+
+<section id="Beer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{{ beertitle.title }}</h2>
+                    <h3 class="section-subheading text-muted">{{ beertitle.title_small }}</h3>
+                </div>
+            </div>
+            <div class="row">
+
+                {% for item in beers %}
+
+
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal{{ item.id }}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ MEDIA_URL }}{{ item.beer_pic }}" style="height: 300px;" class="img-responsive" alt="">`
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{ item.beer_title }}</h4>
+                        <p class="text-muted">{{ item.beer_slug  }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+{% for item in beers %}
+ <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ item.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>{{ item.beer_title }}</h2>
+                            <p class="item-intro text-muted">{{ item.beer_slug }}</p>
+                            <img class="img-responsive center-block" src="{{ MEDIA_URL }}{{ item.beer_pic }}" alt="">
+                            <p>{{ item.beer_text}}</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

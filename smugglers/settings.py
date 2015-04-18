@@ -7,6 +7,16 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
+from django.contrib import messages
+
+
+MESSAGE_TAGS = {
+            messages.SUCCESS: 'alert-success success',
+            messages.WARNING: 'alert-warning warning',
+            messages.ERROR: 'alert-danger error'
+}
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -22,23 +32,28 @@ SECRET_KEY = '++$^p)93aufyji&*$!o6@t8j57j535*ve2ezks0ylsq(7yhbr8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
 
+TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main_menu',
     'news',
     'django_markdown',
     'smugglers',
+    'bootstrap_pagination',
+
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,6 +99,7 @@ USE_TZ = True
 TEMPLATE_DIRS =(
         os.path.join(BASE_DIR, 'templates'),
 
+
     )
 
 # Static files (CSS, JavaScript, Images)
@@ -100,3 +116,4 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 MEDIA_URL = '/media/'
+

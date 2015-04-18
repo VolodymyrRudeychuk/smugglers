@@ -1,7 +1,42 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% load staticfiles %}
 
-<h1>Hello</h1>
+{% block navmenu %} {% include 'nav.html' %} {% endblock %}
 
+{% block home %} {% include 'header.html' %}{% endblock %}
+
+{% block story %} {% include 'story.html' %} {% endblock %}
+
+{% block beer %} {% include 'beer.html' %} {% endblock %}
+
+{% block where %} {% include 'where.html' %} {% endblock %}
+
+{% block contact %} {% include 'contact.html' %} {% endblock %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock %}
+
+{% block modal %} {% include 'modal.html' %} {% endblock %}
+
+
+{% block scripts %}
+    {{ block.super }}
+    <script>
+        $(document).ready(function(){
+            console.log($.cookie('18-years-old'));
+            if ($.cookie('18-years-old') !== 'yes'){
+                $('#myModal').modal('show');
+            }
+
+            $('#myModal').on('hidden.bs.modal', function(){
+                console.log('set cookie yes');
+                $.cookie('18-years-old', 'yes');
+            })
+
+        });
+    </script>
 {% endblock %}
+
+
+
+
